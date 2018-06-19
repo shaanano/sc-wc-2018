@@ -1,11 +1,13 @@
 'use strict';
 var http = require('http');
-var port = process.env.PORT || 1337;
 
-var options = {
-    host: "192.168.0.200",
-    port: 8080,
-};
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 1337
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+
+// var options = {
+//     host: "192.168.0.200",
+//     port: 8080,
+// };
 
 var request = require("request")
 const bets = require("./bets.json")
@@ -92,7 +94,7 @@ var server = http.createServer(function (req, res)
     {
         console.log('(%s) Server listening on %j', new Date(), server.address())
     })
-    .listen(port)
+    .listen(server_port,server_ip_address)
 
 
 function getGroups(callback)
@@ -100,7 +102,7 @@ function getGroups(callback)
     console.log("(%s) Sending request", new Date())
     request({
         uri: "http://worldcup.sfg.io/teams/group_results",
-        proxy: "http://192.168.0.200:8080",
+        //proxy: "http://192.168.0.200:8080",
         json: true
     }, function (error, response, body)
         {
