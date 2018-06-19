@@ -1,0 +1,521 @@
+﻿[
+    {
+        "name": "Tal",
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [ "URU", "EGY", "KSA" ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "ESP", "POR", "IRN" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "DEN", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "NGA", "CRO" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "SUI", "SRB" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "MEX", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "COL", "POL", "SEN" ]
+            }
+        ]
+    },
+    {
+        "name": "Dave",
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [ "URU", "EGY", "KSA" ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "ESP", "POR", "MAR" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "DEN", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "CRO", "NGA" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "SUI", "SRB" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "MEX", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "ENG", "BEL", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "COL", "POL", "JPN" ]
+            }
+        ]
+    },
+    {
+        "name": "Noam",
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [ "URU", "RUS", "KSA" ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "ESP", "POR", "IRN" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "PER", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "ISL", "NGA" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "SUI", "CRC" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "MEX", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "POL", "COL", "SEN" ]
+            }
+        ]
+    },
+    {
+        "name": "Mark",
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [
+                    "URU",
+                    "KSA",
+                    "EGY"
+                ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "ESP", "POR", "IRN" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "DEN", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "CRO", "NGA" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "SUI", "SRB" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "MEX", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "COL", "POL", "SEN" ]
+            }
+        ]
+    },
+    {
+        "name": "Omri",
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [ "URU", "RUS", "KSA" ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "ESP", "POR", "IRN" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "DEN", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "CRO", "NGA" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "SUI", "CRC" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "MEX", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "COL", "POL", "JPN" ]
+            }
+        ]
+    },
+    {
+        "name": "Erez",
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [
+                    "URU",
+                    "RUS",
+                    "KSA"
+                ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "ESP", "POR", "MAR" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "DEN", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "CRO", "ISL" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "SUI", "SRB" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "SWE", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "TUN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "POL", "COL", "JPN" ]
+            }
+        ]
+    },
+    {
+        "name": "Danny",
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [
+                    "URU",
+                    "RUS",
+                    "KSA"
+                ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "ESP", "POR", "IRN" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "DEN", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "CRO", "ISL" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "SRB", "CRC" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "MEX", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "COL", "POL", "SEN" ]
+            }
+        ]
+    },
+    {
+        "name": "Ido",
+
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [
+                    "URU",
+                    "EGY",
+                    "KSA"
+                ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "ESP", "POR", "IRN" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "DEN", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "CRO", "ISL" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "SRB", "CRC" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "MEX", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "COL", "POL", "JPN" ]
+            }
+        ]
+    },
+    {
+        "name": "Hanan",
+
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [
+                    "URU",
+                    "RUS",
+                    "KSA"
+                ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "ESP", "POR", "IRN" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "PER", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "CRO", "ARG", "ISL" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "CRC", "SRB" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "MEX", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "COL", "POL", "SEN" ]
+            }
+        ]
+    },
+    {
+        "name": "Zvi",
+
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [
+                    "URU",
+                    "EGY",
+                    "KSA"
+                ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "ESP", "MAR", "IRN" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "PER", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "CRO", "ISL" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "CRC", "SRB" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "MEX", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "COL", "POL", "SEN" ]
+            }
+        ]
+    },
+    {
+        "name": "Yoav",
+
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [
+                    "URU",
+                    "EGY",
+                    "RUS"
+                ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "POR", "ESP", "IRN" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "PER", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "CRO", "NGA" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "CRC", "SRB" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "SWE", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "COL", "JPN", "SEN" ]
+            }
+        ]
+    },
+    {
+        "name": "MONKEY",
+
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [
+                    "EGY",
+                    "RUS",
+                    "KSA"
+                ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "MAR", "POR", "IRN" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "PER", "DEN", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "CRO", "ISL", "NGA" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "SUI", "CRC" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "KOR", "GER", "MEX" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "TUN", "ENG" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "SEN", "POL", "JPN" ]
+            }
+        ]
+    },
+    {
+        "name": "BY RANK",
+
+        "groups": [
+            {
+                "letter": "A",
+                "teams": [ "RUS", "URU", "KSA" ]
+            },
+            {
+                "letter": "B",
+                "teams": [ "POR", "ESP", "MAR" ]
+            },
+            {
+                "letter": "C",
+                "teams": [ "FRA", "PER", "AUS" ]
+            },
+            {
+                "letter": "D",
+                "teams": [ "ARG", "CRO", "NGA" ]
+            },
+            {
+                "letter": "E",
+                "teams": [ "BRA", "SUI", "SRB" ]
+            },
+            {
+                "letter": "F",
+                "teams": [ "GER", "MEX", "KOR" ]
+            },
+            {
+                "letter": "G",
+                "teams": [ "BEL", "ENG", "PAN" ]
+            },
+            {
+                "letter": "H",
+                "teams": [ "POL", "COL", "JPN" ]
+            }
+        ]
+    }
+]

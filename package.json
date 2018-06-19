@@ -1,0 +1,12 @@
+{
+  "name": "world-cup2018",
+  "version": "0.0.0",
+  "description": "WorldCup2018",
+  "main": "server.js",
+  "author": {
+    "name": "omris"
+  },
+  "dependencies": {
+    "request": "^2.87.0"
+  }
+}
