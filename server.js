@@ -1,8 +1,8 @@
 'use strict';
 var http = require('http');
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 1337
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 1337,
+    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
 
 // var options = {
 //     host: "192.168.0.200",
@@ -94,7 +94,7 @@ var server = http.createServer(function (req, res)
     {
         console.log('(%s) Server listening on %j', new Date(), server.address())
     })
-    .listen(server_port,server_ip_address)
+    .listen(port,ip)
 
 
 function getGroups(callback)
