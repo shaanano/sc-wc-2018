@@ -122,13 +122,13 @@ function getGroupDictionary(groupResults)
     var groupDictionary = {}
     for (var i = 0; i < groupResults.length; i++)
     {
-        var g = groupResults[i].group
+        var g = groupResults[i]
         var group = {}
         //console.log("Adding group %s", g.letter)
         var isFirst = true;
-        for (var j = 0; j < g.teams.length; j++)
+        for (var j = 0; j < g.ordered_teams.length; j++)
         {
-            var team = g.teams[j].team
+            var team = g.ordered_teams[j]
             //console.log("Adding team %s", team.fifa_code)
             group[team.fifa_code] = { "points": team.points, "isFirst": isFirst }
             isFirst = false
