@@ -130,7 +130,7 @@ var server = http.createServer(function (req, res) {
                 res.writeHead(200, { 'Content-Type': 'text/html' })
                 var table = ''
 
-                table += '<html><head><title>SC WC 2018 Standings</title></head><body><table border="1" align="center"><tr><th>Rank</th><th>Name</th><th>Group Stage Points</th><th>Knockout Stage Points</th><th>Total Points</th></tr>'
+                table += '<html><head><title>SC WC 2018 Standings</title></head><body><table border="1" align="center"><tr><th>Rank</th><th>Name</th><th>Group Stage</th><th>Knockout Stage</th><th>Total Points</th></tr>'
                 for (var i = 0; i < players_ko.length; i++) {
                     var player = players_ko[i]
                     table += '<tr align="center"><td>' + (i + 1) + '</td><td align="left">' + player.name + '</td><td>' + player.groupPoints + '</td><td>' + player.koPoints + '</td><td>' + player.totalPoints + '</td></tr>'
