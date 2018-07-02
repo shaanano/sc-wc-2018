@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Tal",
+        "group_score": 74, 
+        "bets": ["FRA","URU","ESP","CRO","BRA","BEL","SUI","COL","FRA","BEL","SUI","CRO","BEL","CRO","","BEL"]
+    },
+    {
+        "name": "Dave",
+        "group_score": 86, 
+        "bets": ["FRA","POR","ESP","CRO","BRA","BEL","SWE","ENG","POR","BEL","SWE","CRO","BEL","CRO","","BEL"]
+    },
+    {
+        "name": "Noam",
+        "group_score": 81, 
+        "bets": ["FRA","POR","ESP","CRO","BRA","BEL","SWE","ENG","FRA","BEL","SWE","CRO","BEL","CRO","","BEL"]
+    },
+    {
+        "name": "Mark",
+        "group_score": 92, 
+        "bets": ["FRA","POR","ESP","CRO","BRA","BEL","SUI","ENG","POR","BEL","SUI","CRO","BEL","CRO","","CRO"]
+    },
+    {
+        "name": "Omri",
+        "group_score": 94, 
+        "bets": ["FRA","URU","ESP","CRO","BRA","BEL","SUI","ENG","URU","BRA","SUI","ESP","BRA","ESP","","BRA"]
+    },
+    {
+        "name": "Erez",
+        "group_score": 91, 
+        "bets": ["ARG","POR","ESP","CRO","BRA","BEL","SUI","ENG","POR","BRA","ENG","ESP","POR","ESP","","ESP"]
+    },
+    {
+        "name": "Danny",
+        "group_score": 94, 
+        "bets": ["ARG","URU","ESP","CRO","BRA","BEL","SUI","ENG","URU","BRA","ENG","ESP","BRA","ESP","","BRA"]
+    },
+    {
+        "name": "Ido",
+        "group_score": 88, 
+        "bets": ["FRA","POR","ESP","CRO","BRA","BEL","SUI","ENG","FRA","BRA","ENG","ESP","BRA","ESP","","BRA"]
+    },
+    {
+        "name": "Hanan",
+        "group_score": 91, 
+        "bets": ["FRA","URU","ESP","CRO","BRA","BEL","SUI","ENG","FRA","BRA","ENG","CRO","BRA","ENG","","BRA"]
+    },
+    {
+        "name": "Zvi",
+        "group_score": 78, 
+        "bets": ["FRA","URU","ESP","CRO","BRA","BEL","SWE","ENG","URU","BRA","ENG","CRO","BRA","CRO","","BRA"]
+    },
+    {
+        "name": "Yoav",
+        "group_score": 75, 
+        "bets": ["FRA","POR","ESP","CRO","BRA","BEL","SWE","ENG","POR","BRA","ENG","CRO","POR","CRO","","POR"]
+    }
+]
