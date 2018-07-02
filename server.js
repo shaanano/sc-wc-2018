@@ -303,19 +303,20 @@ function doCalcKO() {
     players_ko = []
     for (var i = 0; i < bets_ko.length; i++) {
         var player = bets_ko[i]
+        var playerBets = player.bets.slice()
         //console.log("Calculating for player %s", player.name)
         var points = 0
         for (var j = 0; j < knockout.length; j++) {
             if(knockout[j].winner_code == player.bets[j]){
                 points += 3
-                player.bets[j] = "<b>"+player.bets[j]+"</b>"
+                playerBets[j] = "<b>"+player.bets[j]+"</b>"
             }
             else{
-                player.bets[j] = "<del>"+player.bets[j]+"</del>"
+                playerBets[j] = "<del>"+player.bets[j]+"</del>"
             }
         }
 
-        var playerScore = { "name": player.name, "groupPoints": player.group_score, "koPoints": points, "totalPoints": points + player.group_score, "bets": player.bets }
+        var playerScore = { "name": player.name, "groupPoints": player.group_score, "koPoints": points, "totalPoints": points + player.group_score, "bets": playerBets }
         console.log("(%s) Player score: %j", new Date(), playerScore)
         players_ko.push(playerScore)
     }
