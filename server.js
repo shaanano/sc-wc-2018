@@ -13,6 +13,8 @@ var request = require("request")
 const bets = require("./bets.json")
 const bets_ko = require("./bets_ko.json")
 
+const game_order = [[0, 8, 12, 15], [1], [4, 9], [5], [2, 11, 13], [3], [6, 10], [7]]
+
 var groups = {}
 var players = []
 var playersWithPosition = []
@@ -77,26 +79,14 @@ var server = http.createServer(function (req, res) {
                     if (j == 0)
                         table += '<td rowspan="8" valign="middle">' + player.name + '</td>'
 
+                    var game_row = game_order[j];
 
-                    table += '<td>' + player.bets[j] + '</td>'
+
+                    table += '<td>' + player.bets[game_row[0]] + '</td>'
                     if (j % 2 == 0)
-                    {
-                        var index = 8;
-                        switch(j)
-                        {
-                            case 0:
-                            index=8
-                            break
-                            case 2:
-                            index = 11
-                            break
-                            default:
-                            index = j/2 + 7
-                        }
-                        table += '<td rowspan="2">' + player.bets[index] + '</td>'
-                    }
+                        table += '<td rowspan="2">' + player.bets[game_row[1]] + '</td>'
                     if (j % 4 == 0)
-                        table += '<td rowspan="4">' + player.bets[13-j/4] + '</td>'
+                        table += '<td rowspan="4">' + player.bets[game_row[2]] + '</td>'
 
                     if (j == 0)
                         table += '<td rowspan="8" valign="middle">' + player.bets[15] + '</td>'
@@ -152,41 +142,29 @@ var server = http.createServer(function (req, res) {
                         table += '<tr align="center">'
                         if (j == 0)
                             table += '<td rowspan="8" >' + (i + 1) + '</td><td rowspan="8">' + player.name + '</td>'
-    
-    
-                        table += '<td>' + player.bets[j] + '</td>'
+
+
+
+                        var game_row = game_order[j];
+
+
+                        table += '<td ' + getStyleByStatus(player.bets[game_row[0]].status) + '>' + player.bets[game_row[0]].team + '</td>'
                         if (j % 2 == 0)
-                        {
-                            var index = 8;
-                            switch(j)
-                            {
-                                case 0:
-                                index=8
-                                break
-                                case 2:
-                                index = 11
-                                break
-                                case 4:
-                                index = 
-                                default:
-                                index = j/2 + 7
-                            }
-                            table += '<td rowspan="2">' + player.bets[index] + '</td>'
-                        }
+                            table += '<td rowspan="2" ' + getStyleByStatus(player.bets[game_row[1]].status) + '>' + player.bets[game_row[1]].team + '</td>'
                         if (j % 4 == 0)
-                            table += '<td rowspan="4">' + player.bets[13-j/4] + '</td>'
-                        if (j == 0)
-                        {
-                            table += '<td rowspan="8">' + player.bets[15] + '</td>'
-                                    +'<td rowspan="8">' + player.groupPoints + '</td>'
-                                    +'<td rowspan="8">' + player.koPoints + '</td>'
-                                    +'<td rowspan="8">' + player.totalPoints + '</td>'
+                            table += '<td rowspan="4" ' + getStyleByStatus(player.bets[game_row[2]].status) + '>' + player.bets[game_row[2]].team + '</td>'
+
+                        if (j == 0) {
+                            table += '<td rowspan="8" ' + getStyleByStatus(player.bets[14].status) + '>' + player.bets[14].team + '</td>'
+                                + '<td rowspan="8">' + player.groupPoints + '</td>'
+                                + '<td rowspan="8">' + player.koPoints + '</td>'
+                                + '<td rowspan="8">' + player.totalPoints + '</td>'
                         }
-    
+
                         table += '</tr>'
                     }
 
-                    
+
                 }
                 table += '</table></body></html>'
                 res.end(table)
@@ -207,14 +185,14 @@ function getGroups(callback) {
         //proxy: "http://192.168.0.200:8080",
         json: true
     }, function (error, response, body) {
-            if (!error && response.statusCode === 200) {
-                console.log("(%s) Received response", new Date())
-                //console.log(body) // Print the json response
-                groups = getGroupDictionary(body)
-                if (undefined != callback)
-                    callback()
-            }
-        })
+        if (!error && response.statusCode === 200) {
+            console.log("(%s) Received response", new Date())
+            //console.log(body) // Print the json response
+            groups = getGroupDictionary(body)
+            if (undefined != callback)
+                callback()
+        }
+    })
 }
 
 function getGroupDictionary(groupResults) {
@@ -243,14 +221,14 @@ function getMatches(callback) {
         //proxy: "http://192.168.0.200:8080",
         json: true
     }, function (error, response, body) {
-            if (!error && response.statusCode === 200) {
-                console.log("(%s) Received response", new Date())
-                //console.log(body) // Print the json response
-                knockout = getKnockout(body)
-                if (undefined != callback)
-                    callback()
-            }
-        })
+        if (!error && response.statusCode === 200) {
+            console.log("(%s) Received response", new Date())
+            //console.log(body) // Print the json response
+            knockout = getKnockout(body)
+            if (undefined != callback)
+                callback()
+        }
+    })
 }
 
 function getKnockout(matches) {
@@ -302,26 +280,50 @@ function doCalcGroups() {
 
 function doCalcKO() {
     players_ko = []
+    var eliminated_teams = {}
     for (var i = 0; i < bets_ko.length; i++) {
         var player = bets_ko[i]
-        var playerBets = player.bets.slice()
+        var playerBets = []
         //console.log("Calculating for player %s", player.name)
         var points = 0
-        for (var j = 0; j < knockout.length; j++) {
-            if(knockout[j].winner_code == player.bets[j]){
-                points += 3
-                playerBets[j] = "<b>"+player.bets[j]+"</b>"
+
+        for (var j = 0; j < player.bets.length; j++) {
+            var playerBet = player.bets[j]
+            var betStatus = 0
+            if (j < knockout.length) {
+                if (knockout[j].winner_code == playerBet) {
+                    points += 3
+                    betStatus = 1
+                }
+                else {
+                    eliminated_teams[playerBet] = true
+                    betStatus = -1
+                }
             }
-            else{
-                playerBets[j] = "<del>"+player.bets[j]+"</del>"
+            else if (eliminated_teams[playerBet]) {
+                betStatus = -1
             }
+            if (playerBet)
+                playerBets.push({ "team": playerBet, "status": betStatus })
         }
+
 
         var playerScore = { "name": player.name, "groupPoints": player.group_score, "koPoints": points, "totalPoints": points + player.group_score, "bets": playerBets }
         console.log("(%s) Player score: %j", new Date(), playerScore)
         players_ko.push(playerScore)
     }
     players_ko.sort(comparePlayers)
+}
+
+function getStyleByStatus(status) {
+    switch (status) {
+        case -1:
+            return 'style="text-decoration:line-through"'
+        case 1:
+            return 'style="font-weight:bold"'
+        default:
+            return ''
+    }
 }
 
 function comparePlayersInGroup(a, b) {
