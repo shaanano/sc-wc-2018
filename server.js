@@ -80,9 +80,24 @@ var server = http.createServer(function (req, res) {
 
                     table += '<td>' + player.bets[j] + '</td>'
                     if (j % 2 == 0)
-                        table += '<td rowspan="2" valign="middle">' + player.bets[j/2 + 8] + '</td>'
+                    {
+                        var index = 8;
+                        switch(j)
+                        {
+                            case 0:
+                            index=8
+                            break
+                            case 2:
+                            index = 11
+                            break
+                            default:
+                            index = j/2 + 7
+                        }
+                        table += '<td rowspan="2">' + player.bets[index] + '</td>'
+                    }
                     if (j % 4 == 0)
-                        table += '<td rowspan="4" valign="middle">' + player.bets[j/4 + 12] + '</td>'
+                        table += '<td rowspan="4">' + player.bets[13-j/4] + '</td>'
+
                     if (j == 0)
                         table += '<td rowspan="8" valign="middle">' + player.bets[15] + '</td>'
 
@@ -130,10 +145,47 @@ var server = http.createServer(function (req, res) {
                 res.writeHead(200, { 'Content-Type': 'text/html' })
                 var table = ''
 
-                table += '<html><head><title>SC WC 2018 Standings</title></head><body><table border="1" align="center"><tr><th>Rank</th><th>Name</th><th>Group Stage</th><th>Knockout Stage</th><th>Total Points</th></tr>'
+                table += '<html><head><title>SC WC 2018 Standings</title></head><body><table border="1" align="center" valign="middle"><tr><th>Rank</th><th>Name</th><th>1/4</th><th>1/2</th><th>Final</th><th>Winner</th><th>Group Stage</th><th>Knockout Stage</th><th>Total Points</th></tr>'
                 for (var i = 0; i < players_ko.length; i++) {
                     var player = players_ko[i]
-                    table += '<tr align="center"><td>' + (i + 1) + '</td><td align="left">' + player.name + '</td><td>' + player.groupPoints + '</td><td>' + player.koPoints + '</td><td>' + player.totalPoints + '</td></tr>'
+
+                    for (var j = 0; j < 8; j++) {
+                        table += '<tr align="center">'
+                        if (j == 0)
+                            table += '<td rowspan="8" >' + (i + 1) + '</td><td rowspan="8">' + player.name + '</td>'
+    
+    
+                        table += '<td>' + player.bets[j] + '</td>'
+                        if (j % 2 == 0)
+                        {
+                            var index = 8;
+                            switch(j)
+                            {
+                                case 0:
+                                index=8
+                                break
+                                case 2:
+                                index = 11
+                                break
+                                default:
+                                index = j/2 + 7
+                            }
+                            table += '<td rowspan="2">' + player.bets[index] + '</td>'
+                        }
+                        if (j % 4 == 0)
+                            table += '<td rowspan="4">' + player.bets[13-j/4] + '</td>'
+                        if (j == 0)
+                        {
+                            table += '<td rowspan="8">' + player.bets[15] + '</td>'
+                                    +'<td rowspan="8">' + player.groupPoints + '</td>'
+                                    +'<td rowspan="8">' + player.koPoints + '</td>'
+                                    +'<td rowspan="8">' + player.totalPoints + '</td>'
+                        }
+    
+                        table += '</tr>'
+                    }
+
+                    
                 }
                 table += '</table></body></html>'
                 res.end(table)
@@ -254,11 +306,16 @@ function doCalcKO() {
         //console.log("Calculating for player %s", player.name)
         var points = 0
         for (var j = 0; j < knockout.length; j++) {
-            if(knockout[j].winner_code == player.bets[j])
+            if(knockout[j].winner_code == player.bets[j]){
                 points += 3
+                player.bets[j] = "<b>"+player.bets[j]+"</b>"
+            }
+            else{
+                player.bets[j] = "<del>"+player.bets[j]+"</del>"
+            }
         }
 
-        var playerScore = { "name": player.name, "groupPoints": player.group_score, "koPoints": points, "totalPoints": points + player.group_score }
+        var playerScore = { "name": player.name, "groupPoints": player.group_score, "koPoints": points, "totalPoints": points + player.group_score, "bets": player.bets }
         console.log("(%s) Player score: %j", new Date(), playerScore)
         players_ko.push(playerScore)
     }
