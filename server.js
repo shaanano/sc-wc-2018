@@ -240,6 +240,10 @@ function getKnockout(matches) {
         switch (match.status) {
             case "future":
                 return completedMatches
+            case "in progress":
+                if (match.winner_code != null)
+                    completedMatches.push(match)
+                break
             case "completed":
                 completedMatches.push(match)
                 break
